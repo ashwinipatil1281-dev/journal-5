@@ -1,9 +1,13 @@
-P = float(input("Enter the principal amount (P): "))
-R = float(input("Enter the annual interest rate (R) in %: "))
-T = float(input("Enter the time period (T) in years: "))
+import sys
 
-# Calculate simple interest
-SI = (P * R * T) / 100
+if len(sys.argv) != 4:
+    print("Usage: python simple_interest.py <principal> <rate> <time>")
+    sys.exit(1)
 
-# Display the result
-print(f"\nSimple Interest = {SI:.2f}")
+P = float(sys.argv[1])
+R = float(sys.argv[2])
+T = float(sys.argv[3])
+
+si = (P * R * T) / 100
+
+print("Simple Interest:", si)
